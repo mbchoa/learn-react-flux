@@ -1,7 +1,7 @@
 <head>
   <script src="https://fb.me/react-0.14.6.js"></script>
   <script src="https://fb.me/react-dom-0.14.6.js"></script>
-  <script src="http://fb.me/JSXTransformer-0.13.0.js"></script>
+  <script src="application.js"></script>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
@@ -13,61 +13,3 @@
     </div>
   </div>
 </body>
-
-<script type="text/jsx">
-  var Badge = React.createClass({
-    render: function() {
-      return <button className="btn btn-primary" type="button">
-        {this.props.title} <span className="badge">{this.props.number}</span>
-      </button>
-    }
-  });
-
-  var Thumbnail = React.createClass({
-    render: function() {
-      return <div className="thumbnail">
-        <img src={this.props.imageURL}/>
-        <div className="caption">
-          <h3>{this.props.header}</h3>
-          <p>{this.props.description}</p>
-          <p>
-            <Badge title={this.props.title} number={this.props.number}/>
-          </p>
-        </div>
-      </div>
-    }
-  });
-
-  var ThumbnailList = React.createClass({
-    render: function() {
-      var list = this.props.thumbnailData.map(function(thumbnailProps) {
-        return <Thumbnail {...thumbnailProps} />
-      });
-
-      return <div>
-        {list}
-      </div>
-    }
-  });
-
-  var options = {
-    thumbnailData: [{
-      title: 'See Tutorials',
-      number: 32,
-      header: 'Learn React',
-      description: 'React is fantastic new library for making fast, dynamic pages. React is fantastic new library for making fast, dynamic pages',
-      imageURL: 'http://formatjs.io/img/react.svg'
-    },
-    {
-      title: 'Show Courses',
-      number: 25,
-      header: 'Learn Gulp',
-      description: 'Gulp will speed up your development workflow. Gulp will speed up your development workflow.',
-      imageURL: 'http://brunch.io/images/others/gulp.png'
-    }]
-  };
-
-  var element = React.createElement(ThumbnailList, options);
-
-  ReactDOM.render(element, document.querySelector('.target'));
-</script>
