@@ -9,8 +9,8 @@ Project using React + Flux to create an imgur client based on Section 6 - Flux a
 Checkout this repo, install depdencies, then start the gulp process with the following:
 
 ```
-	> git clone https://github.com/mbchoa/learn-react-flux/imgur.git
-	> cd 
+	> git clone https://github.com/mbchoa/learn-react-flux.git
+	> cd learn-react-flux/imgur
 	> npm install
 	> gulp
 ```
